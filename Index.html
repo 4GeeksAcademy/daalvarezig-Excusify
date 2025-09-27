@@ -18,33 +18,30 @@
     </div>
 
     <script>
-    let who = ['Mi perro', 'Mi novia', 'El repartido de Amazon', 'Mi hija pequeña'];
-    let action = ['se comió', 'se cargo', 'destrozó', 'hizo desaparecer'];
-    let what = ['mi proyecto', 'mi iPhone nuevo', 'el descapotable', 'los tulipanes del salón' ];
-    let when = ['antes de la clase', 'cuando estaba comiendo', 'durante mi siesta', 'mientras estaba jugando a la play'];
+    let quien = ['Mi perro', 'Mi novia', 'El repartido de Amazon', 'Mi hija pequeña'];
+    let accion = ['se comió', 'se cargo', 'destrozó', 'hizo desaparecer'];
+    let que = ['mi proyecto', 'mi iPhone nuevo', 'el descapotable', 'los tulipanes del salón' ];
+    let cuando = ['antes de la clase.', 'cuando estaba comiendo.', 'durante mi siesta.', 'mientras estaba jugando a la play.'];
 
-    function randomElement(array) {
-      return array[Math.floor(Math.random() * array.length)];
+    let arrays = [quien, accion, que, cuando];
+
+  function generateExcuse() {
+    let excuse = '';
+
+    for (let i = 0; i < arrays.length; i++) {
+      let arrayActual = arrays[i];                // Selecciona el array actual
+      let indice = Math.floor(Math.random() * 4); // Número aleatorio del 0 al 3
+      let palabra = arrayActual[indice];          // Obtiene la palabra
+      excuse = excuse + palabra + ' ';            // Añade la palabra a la excusa
     }
 
-    function generateExcuse() {
-      return `${randomElement(who)} ${randomElement(action)} ${randomElement(what)} ${randomElement(when)}.`;
-    }
+    return excuse; // Devuelve la excusa completa
+  }
 
-    // Se ejecuta cuando la página termina de cargar
-    window.onload = function() {
-      const p = document.getElementById("excuse");
-      const btn = document.getElementById("btnExcuse");
-
-      // Establecer excusa inicial
-      p.innerHTML = generateExcuse();
-
-      // Cambiar excusa al pulsar el botón
-      btn.addEventListener("click", function() {
-        p.innerHTML = generateExcuse();
-      });
-    }
-  </script>
-
+  // Al cargar la página, generamos una excusa automáticamente
+  window.onload = function() {
+    document.getElementById("excuse").innerHTML = generateExcuse();
+  }
+</script>
 </body>
 </html>
