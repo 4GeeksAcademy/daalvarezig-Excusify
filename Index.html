@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Excusify</title>
+</head>
+<body>
+    <h1>XDDD...No te lo vas a creer !! ^_^...
+        Peroooo....
+
+    <p id="excuse">My dog ate my homework</p>
+
+    </h1>
+    <div style="text-align: center;">
+        <button class="button" onclick="location.reload();"><strong>No te sirve esta excusa?...LOL<br>Push me!!, tengo mas ;-)</strong></button>
+    </div>
+
+    <script>
+    let who = ['Mi perro', 'Mi novia', 'El repartido de Amazon', 'Mi hija pequeña'];
+    let action = ['comió', 'se cargo', 'destrozó', 'hizo desaparecer'];
+    let what = ['mi proyecto', 'mi iPhone nuevo', 'el descapotable'];
+    let when = ['antes de la clase', 'cuando estaba durmiendo', 'mientras jugaba al Paddle', 'durante mi siesta', 'mientras estaba jugando a la play'];
+
+    function randomElement(array) {
+      return array[Math.floor(Math.random() * array.length)];
+    }
+
+    function generateExcuse() {
+      return `${randomElement(who)} ${randomElement(action)} ${randomElement(what)} ${randomElement(when)}.`;
+    }
+
+    // Se ejecuta cuando la página termina de cargar
+    window.onload = function() {
+      const p = document.getElementById("excuse");
+      const btn = document.getElementById("btnExcuse");
+
+      // Establecer excusa inicial
+      p.innerHTML = generateExcuse();
+
+      // Cambiar excusa al pulsar el botón
+      btn.addEventListener("click", function() {
+        p.innerHTML = generateExcuse();
+      });
+    }
+  </script>
+
+</body>
+</html>

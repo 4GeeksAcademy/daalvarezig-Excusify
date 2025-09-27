@@ -1,0 +1,27 @@
+h1 {
+    color: aliceblue;
+    background-color: rgb(58, 192, 192);
+    text-align: center;
+    padding: 50px;
+    border-radius: 50px;
+    border: dashed;
+}
+
+body {
+  background-image: url("assets/excusify.png");
+  background-repeat: repeat;
+  background-size: 1200px auto; /* Ajusta el tamaño de la palabra en el patrón */
+}
+.button {
+    height: 100px;
+    width: 300px;
+    font-size: 15px;
+    font-family: Verdana;
+    color: aliceblue;
+    background-color: rgb(58, 192, 192);
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 50px;
+    border: dashed;
+
+}
